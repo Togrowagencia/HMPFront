@@ -1,7 +1,8 @@
-const showAlert = (title, message) => {
+import Swal from "sweetalert2";
+export const showAlert = (title, message) => {
     Swal.fire({
       title: `<div class='flex flex-col justify-center items-center'>
-                <img src="/images/logo-solo.png" alt="Logo" style="margin-bottom: 10px;" />
+                <img src="/images/logo-completo.png" alt="Logo" style="margin-bottom: 10px;" />
               </div>`,
       html: `
         <div class='flex flex-col justify-center items-center'>

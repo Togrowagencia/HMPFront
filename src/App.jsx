@@ -5,11 +5,16 @@ import { disconnectSocket } from '@/settings/socket.js';
 import useAuth from '@/lib/hooks/useAuth';
 
 /*Routes*/
-import Login from '@/pages/login.jsx'
+import Login from '@/pages/Login.jsx'
 import Recover from '@/pages/Recover.jsx'
 import Reset from '@/pages/Reset.jsx'
 import Register from '@/pages/Register.jsx'
+import Dashboard from '@/pages/Dashboard.jsx'
 /*End::Routes*/
+
+/*Layouts*/
+import DashboardLayout from '@/lib/layouts/siteLayout.jsx';
+/*END::Layouts*/
 
 /*Routes Protection*/
 const ProtectedRoute = ({ children }) => {
@@ -49,6 +54,118 @@ function App() {
           <Route path="/reset-password" element={<Reset />} />
           <Route path="/register" element={<Register />} />
         /*END::PUBLIC ROUTES*/
+          
+        /* PRIVATE ROUTES */
+          <Route
+            path="/dashboard"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/transactions"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/users"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/folders"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/tasks"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/reports"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/contacts"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/team"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/properties"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+
+          <Route
+            path="/funnel"
+            element={
+              //<ProtectedRout e>
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
+              //</ProtectedRout>
+            }
+          />
+        /*END::PRIVATE ROUTES */
 
         /*404*/
           <Route path="*" element={<Navigate to="/" />} />

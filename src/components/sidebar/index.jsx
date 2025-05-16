@@ -3,84 +3,134 @@ import { Link } from 'react-router-dom';
 import './css/styles.css';
 export const Sidebar = () => {
 
-      const [isCollapsed, setIsCollapsed] = useState(() => {
-        const savedState = localStorage.getItem('sidebarCollapsed');
-        return savedState === 'true'; // Devuelve true si está comprimida, false si no
-      });
-    
-       // Función para alternar el estado de la barra lateral (expandir/comprimir)
-       const toggleSidebar = () => {
-        const newState = !isCollapsed;
-        setIsCollapsed(newState);
-        localStorage.setItem('sidebarCollapsed', newState);
+      const getSelectedLink = (path) => {
+        switch (path) {
+          case '/dashboard':
+            return location.pathname === path ? "selected-content" : "";
+          case '/transactions':
+            return location.pathname === path ? "selected-content" : "";
+          case '/users':
+            return location.pathname === path ? "selected-content" : "";
+          case '/folders':
+            return location.pathname === path ? "selected-content" : "";
+          case '/tasks':
+            return location.pathname === path ? "selected-content" : "";
+          case '/reports':
+            return location.pathname === path ? "selected-content" : "";
+          case '/team':
+            return location.pathname === path ? "selected-content" : "";
+          case '/contacts':
+            return location.pathname === path ? "selected-content" : "";
+          case '/properties':
+            return location.pathname === path ? "selected-content" : "";
+          case '/funnel':
+            return location.pathname === path ? "selected-content" : "";
+          default:
+            return "";
+        }
       };
 
-  return (
-    <div className={`${isCollapsed ? 'sidebar' : 'sidebar-hidden' } !z-30`}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="41" height="45" viewBox="0 0 41 45" fill="none" className="comprimir-button" onClick={toggleSidebar}>
-            <g filter="url(#filter0_dddd_57_471)">
-              <circle cx="22" cy="18" r="17" fill={'#fff'}/>
-              <path d="M25.937 26.511C26.3433 26.0141 26.2699 25.282 25.7731 24.8757L19.2854 19.57C18.879 19.2375 18.6458 18.7461 18.6458 18.2216C18.6458 17.6971 18.879 17.2056 19.2854 16.8732L25.7731 11.5674C26.9269 10.5544 25.5337 8.83567 24.3017 9.76827L17.814 15.074C15.84 16.6205 15.8393 19.8227 17.8141 21.3691L24.3017 26.6749C24.5176 26.8514 24.7779 26.9374 25.0367 26.9374C25.3733 26.9374 25.7073 26.7919 25.937 26.511Z" fill="black"/>
-            </g>
-            <defs>
-              <filter id="filter0_dddd_57_471" x="0" y="0" width="41" height="45" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset/>
-                <feGaussianBlur stdDeviation="0.5"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_57_471"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dx="-1" dy="2"/>
-                <feGaussianBlur stdDeviation="1"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"/>
-                <feBlend mode="normal" in2="effect1_dropShadow_57_471" result="effect2_dropShadow_57_471"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dx="-1" dy="4"/>
-                <feGaussianBlur stdDeviation="1.5"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
-                <feBlend mode="normal" in2="effect2_dropShadow_57_471" result="effect3_dropShadow_57_471"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dx="-2" dy="7"/>
-                <feGaussianBlur stdDeviation="1.5"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0"/>
-                <feBlend mode="normal" in2="effect3_dropShadow_57_471" result="effect4_dropShadow_57_471"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect4_dropShadow_57_471" result="shape"/>
-              </filter>
-            </defs>
-          </svg>
+      const getSelectedSvg = (path) => {
+        switch (path) {
+          case '/dashboard':
+            return location.pathname === path ? "/svg/sidebar/dashboard.svg" : "/svg/sidebar/dashboard.svg";
+          case '/transactions':
+            return location.pathname === path ? "/svg/sidebar/transacciones.svg" : "/svg/sidebar/transacciones.svg";
+          case '/users':
+            return location.pathname === path ? "/svg/sidebar/usuarios.svg" : "/svg/sidebar/usuarios.svg";
+          case '/folders':
+            return location.pathname === path ? "/svg/sidebar/archivos.svg" : "/svg/sidebar/archivos.svg";
+          case '/tasks':
+            return location.pathname === path ? "/svg/sidebar/tareas.svg" : "/svg/sidebar/tareas.svg";
+          case '/reports':
+            return location.pathname === path ? "/svg/sidebar/reportes.svg" : "/svg/sidebar/reportes.svg";
+          case '/team':
+            return location.pathname === path ? "/svg/sidebar/team.svg" : "/svg/sidebar/team.svg";
+          case '/contacts':
+            return location.pathname === path ? "/svg/sidebar/contactos.svg" : "/svg/sidebar/contactos.svg";
+          case '/properties':
+            return location.pathname === path ? "/svg/sidebar/propiedades.svg" : "/svg/sidebar/propiedades.svg";
+          case '/funnel':
+            return location.pathname === path ? "/svg/sidebar/embudo.svg" : "/svg/sidebar/embudo.svg";
+          default:
+            return "";
+        }
+      };
 
-          <div className='container-side-beta'>
-            <img src="/images/logo-solo.png" className="logo-solo" />
+      const logout =  () => {
+          localStorage.removeItem('authResponse');
+          localStorage.clear();
+          disconnectSocket();
+          window.location.href = '/'
+      }
+
+  return (
+    <div className={`sidebar`}>
+
+          <div className='pl-[30px] pb-[90px]'>
+            <img src="/images/logo-horizontal.png" className="w-[207px]" />
           </div>
 
           <div className='content-sidebar'>
             <Link to="/dashboard" className={getSelectedLink("/dashboard")}>
-              <img src={getSelectedSvg("/dashboard")} className="noselected-img" />
-              <img src="/svg/sidebar/homehover.svg" className="selected-img" />
-              <p className='textos-14-semibold content-siddebar-cel'>Home</p>
-            </Link>
-            <Link to="/news" className={getSelectedLink("/news")}>
-              <img src={getSelectedSvg("/news")} className="noselected-img" />
-              <img src="/svg/sidebar/newshover.svg" className="selected-img" />
-              <p className='textos-14-semibold content-siddebar-cel'>News</p>
-            </Link>
-            <Link to="/scanner" className={getSelectedLink("/scanner")}>
-              <img src={getSelectedSvg("/scanner")} className="noselected-img" />
-              <img src="/svg/sidebar/scannerhover.svg" className="selected-img" />
-              <p className='textos-14-semibold content-siddebar-cel'>Scanners</p>
+              <img src={getSelectedSvg("/dashboard")} className="w-[17px]" />
+              <p className='inter-18'>Dashboard</p>
             </Link>
 
-            <div className="separator"></div>
+            <Link to="/transactions" className={getSelectedLink("/transactions")}>
+              <img src={getSelectedSvg("/transactions")} className="w-[17px]" />
+              <p className='inter-18'>Transacciones</p>
+            </Link>
 
+            <Link to="/users" className={getSelectedLink("/users")}>
+              <img src={getSelectedSvg("/users")} className="w-[17px]" />
+              <p className='inter-18'>Usuarios</p>
+            </Link>
+            
+            <Link to="/folders" className={getSelectedLink("/folders")}>
+              <img src={getSelectedSvg("/folders")} className="w-[17px]" />
+              <p className='inter-18'>Archivos</p>
+            </Link>
+
+            <Link to="/tasks" className={getSelectedLink("/tasks")}>
+              <img src={getSelectedSvg("/tasks")} className="w-[17px]" />
+              <p className='inter-18'>Tareas</p>
+            </Link>
+
+            <Link to="/reports" className={getSelectedLink("/reports")}>
+              <img src={getSelectedSvg("/reports")} className="w-[17px]" />
+              <p className='inter-18'>Reportes</p>
+            </Link>
+
+            <Link to="/team" className={getSelectedLink("/team")}>
+              <img src={getSelectedSvg("/team")} className="w-[17px]" />
+              <p className='inter-18'>Equipo de trabajo</p>
+            </Link>
+
+            <Link to="/contacts" className={getSelectedLink("/contacts")}>
+              <img src={getSelectedSvg("/contacts")} className="w-[17px]" />
+              <p className='inter-18'>Contactos</p>
+            </Link>
+
+            <Link to="/properties" className={getSelectedLink("/properties")}>
+              <img src={getSelectedSvg("/properties")} className="w-[17px]" />
+              <p className='inter-18'>Propiedades</p>
+            </Link>
+
+            <Link to="/funnel" className={getSelectedLink("/funnel")}>
+              <img src={getSelectedSvg("/funnel")} className="w-[17px]" />
+              <p className='inter-18'>Embudo</p>
+            </Link>
           </div>
 
-          <div className='separator-perfil'></div>
+          <div className='h-[1px] bg-[#EAEAEA] mx-[38px]'></div>
 
-          <button className='h-[50px] gap-2 w-full flex justify-center items-center bg-transparent' onClick={logout}>
+          <button className='h-[120px] pl-[30px] gap-2 w-full flex justify-start items-center bg-transparent' onClick={logout}>
             <img src="/svg/sidebar/logout.svg" alt="" />
-            <p className='blanco inter-14'>Cerrar Sesion</p>
+            <p className='rojo inter-20'>Cerrar Sesion</p>
           </button>
+
+          <img src="/images/marca-de-agua.png" className="ml-[30px] w-[213px]" />
         </div>
   )
 }

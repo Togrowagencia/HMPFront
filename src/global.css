@@ -18,7 +18,7 @@ body {
   margin: 0px !important;
   background: #fff !important;;
   max-width: 100%;
-  color: #F9F9F9 !important;
+  color: #000 !important;
 }
 
 a {
@@ -147,6 +147,14 @@ input {
   background-color: #DBC15E;
 }
 
+.rojo {
+  color: #CD001A;
+}
+
+.bg-rojo {
+  background-color: #CD001A;
+}
+
 .textos-peques {
   font-family: Inter;
   font-size: 13px;
@@ -209,6 +217,22 @@ h4, .h4 {
   font-style: normal;
   font-weight: 600;
   line-height: 11px;
+}
+
+.inter-18{
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.inter-20 {
+  font-family: Inter;
+  font-size: 20px;
+  font-style: 600;
+  font-weight: 600;
+  line-height: 20px;
 }
 /*End::Global*/
 

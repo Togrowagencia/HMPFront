@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {showAlert} from "@/lib/utils/showAlert";
 import axios from "axios";
 import FacebookButton from "@/components/login/facebookButton";
 import GoogleButton from "@/components/login/googleButton";
@@ -25,6 +26,7 @@ const FormLogin = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
+      navigate("/dashboard");
   
       const { email, password } = formData;
   
@@ -57,7 +59,7 @@ const FormLogin = () => {
           console.error(error);
         }
       }
-    };
+    }
   return (
     <form
             action=""
