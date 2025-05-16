@@ -1,24 +1,24 @@
-import React, {useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import FacebookButton from '@/components/login/facebookButton'
-import GoogleButton from '@/components/login/googleButton'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import FacebookButton from "@/components/login/facebookButton";
+import GoogleButton from "@/components/login/googleButton";
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const showPass = () => {
-    setShowPassword(!showPassword)
-  }
+    setShowPassword(!showPassword);
+  };
 
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-      setFormData({
-        ...formData,
-        [name]: value
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
@@ -28,99 +28,130 @@ export const Login = () => {
     const { email, password } = formData;
 
     if (!email.trim() || !password.trim()) {
-      showAlert('Error', 'Incomplete fields');
+      showAlert("Error", "Incomplete fields");
       return;
     }
 
     try {
-      const response = await axios.post('auth/login', {
+      const response = await axios.post("auth/login", {
         username: email,
         password,
       });
 
       const { data } = response;
       if (data?.token) {
-        localStorage.setItem('authResponse', JSON.stringify(data));
-        navigate('/dashboard');
+        localStorage.setItem("authResponse", JSON.stringify(data));
+        navigate("/dashboard");
       }
     } catch (error) {
       const errMsg = error?.response?.data;
 
-      if (errMsg === 'invalid credentials: authentication error: JIFU responded 401') {
-        showAlert('Error', 'Incorrect data');
+      if (
+        errMsg ===
+        "invalid credentials: authentication error: JIFU responded 401"
+      ) {
+        showAlert("Error", "Incorrect data");
       } else {
-        showAlert('Error', 'An unexpected error occurred. Please try again.');
+        showAlert("Error", "An unexpected error occurred. Please try again.");
         console.error(error);
       }
     }
   };
 
-
   return (
-    <div className='w-screen h-screen flex justify-between'>
+    <div className="w-screen h-screen flex justify-between items-center">
       {/**form */}
-      <div className='w-[45%] h-full flex flex-col items-center justify-center'>
+      <div className="w-[45%] h-screen flex flex-col items-center justify-center">
+        <div className="w-[75%] h-[82%] flex flex-col items-center justify-center gap-10 ">
+          <img
+            src="/images/logo-completo.png"
+            alt=""
+            className="w-[38.5%] h-[14%]"
+          />
 
-        <div className='w-[75%] h-full flex flex-col items-center justify-center gap-10 '>
+          <form
+            action=""
+            className="flex flex-col items-center justify-start gap-4 w-full h-full"
+            onSubmit={handleSubmit}
+          >
+            <h1 className="text-center azul-alternativa">Bienvenido</h1>
+            <p className="textos text-center w-[80%] gris">
+              Accede a tu cuenta para administrar propiedades, contratos,
+              clientes y reportes desde un solo lugar. Optimiza tu gestión con
+              herramientas diseñadas para profesionales del sector inmobiliario.
+            </p>
 
-          <img src="/images/logo-completo.png" alt="" className=''/>
+            <div className="flex flex-col items-start px-4 gap-2 w-[85%] mt-2">
+              <label className="textos gris">Correo Electronico</label>
+              <input
+                type="text"
+                className="bg-transparent textos-14 w-full border h-[40px] rounded-[50px] px-4 border-[#0556BF]"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
 
-          <form action="" className='flex flex-col items-center justify-center gap-4 w-full' onSubmit={handleSubmit}>
-            
-            <p className='inter-64 text-center azul'>Bienvenido</p>
-            <p className='inter-16 text-center w-[80%] gris'>Accede a tu cuenta para administrar propiedades, contratos, clientes y reportes desde un solo lugar. Optimiza tu gestión con herramientas diseñadas para profesionales del sector inmobiliario.</p>
+            <div className="flex flex-col items-start px-4 gap-2 w-[85%] mt-2">
+              <label className="textos gris">Password</label>
+              <input
+                type={"password"}
+                className="bg-transparent textos-14 w-full border h-[40px] rounded-[50px] px-4 border-[#0556BF]"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
 
-              <div className='flex flex-col items-start px-4 gap-2 w-full mt-2'>
-                <label className="inter-16 gris">Correo Electronico</label>
-                <input type="text" className='bg-transparent textos-14 w-full border h-[40px] rounded-[50px] px-4 border-[#0556BF]' name="email" value={formData.email} onChange={handleChange}/>
+            <div className="flex items-center justify-between w-[85%] px-4 mt-2">
+              <div className="flex items-center gap-1">
+                <input type="checkbox" name="" id="" />
+                <label className="textos-peques azul-fb">Recuerdame</label>
               </div>
 
-              <div className='flex flex-col items-start px-4 gap-2 w-full mt-2'>
-                <label className="inter-16 gris">Password</label>
-                <input type={'password'} className='bg-transparent textos-14 w-full border h-[40px] rounded-[50px] px-4 border-[#0556BF]' name="password" value={formData.password} onChange={handleChange}/>
-              </div>
+              <Link to={"/forgot-password"} className="text-[#0556BF] textos-peques">
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </div>
 
-              <div className='flex items-center justify-between w-full px-4 mt-2'>
-                <div className='flex items-center gap-1'>
-                  <input type="checkbox" name="" id="" />
-                  <label className="inter-16 azul">Recuerdame</label>
-                </div>
+            <button
+              type="submit"
+              className="bg-azul-alternativa hover:bg-[#1E4483] transition-colors duration-400 w-[80%] negro textos-20 rounded-[99px] py-4 flex items-center justify-center h-[40px] textos blanco !font-bold"
+            >
+              Ingresar
+            </button>
 
-                <Link to={'/forgot-password'} className='text-[#0556BF] inter-16'>¿Olvidaste tu contraseña?</Link>
-              </div>
+            <Link to={"/register"} className="textos-peques gris flex justify-start w-[80%] gap-2">
+              ¿No tienes una cuenta?{" "}
+              <span className="azul-fb">Crea la tuya aquí</span>
+            </Link>
 
+            {/**Links de google */}
+            {/**Separador */}
+            <div className="flex items-center justify-center w-full gap-4">
+              <span className="bg-gris2 h-[1px] w-[35%]" />
+              <p className="gris2">O</p>
+              <span className="bg-gris2 h-[1px] w-[35%]" />
+            </div>
 
-              <button type='submit' className='bg-azul w-full negro textos-20 rounded-[99px] py-4 flex items-center justify-center h-[40px] inter-16 blanco !font-extrabold'>
-                Ingresar
-              </button>
-
-              <p className='inter-13 gris flex justify-start w-full gap-2'>¿No tienes una cuenta? <span className='azul'>Crea la tuya aquí</span></p>
-
-              {/**Links de google */}
-                {/**Separador */}
-                <div className='flex items-center justify-center w-full gap-4'>
-                  <span className='bg-gris h-[1px] w-[35%]'/>
-                    <p className='gris'>O</p>
-                  <span className='bg-gris h-[1px] w-[35%]'/>
-                </div>
-
-              <div className='flex gap-2'>
-                <FacebookButton />
-                <GoogleButton />
-              </div>
-              {/**END::Links de google */}
+            <div className="flex gap-2 w-[100%] items-center justify-center">
+              <FacebookButton />
+              <GoogleButton />
+            </div>
+            {/**END::Links de google */}
           </form>
         </div>
       </div>
 
       {/**Background */}
-      <div className='w-[53%] h-full flex flex-col items-center justify-center'>
-        <div className='bg-degradado-azul w-full h-[758px] rounded-s-[25px] flex justify-end items-bottom'>
-          <img src="/images/login-bg-image.png" className="" />
-        </div>
+      <div className="w-[53%] h-full flex flex-col items-center justify-center relative">
+        <img
+          src="/images/login-bg-image2.png"
+          className="absolute top-[0%] h-[92%] right-[0vh]"
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

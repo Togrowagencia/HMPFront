@@ -3,9 +3,11 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { disconnectSocket } from '@/settings/socket.js';
 import useAuth from '@/lib/hooks/useAuth';
+
 /*Routes*/
 import Login from '@/pages/login.jsx'
-
+import Recover from '@/pages/Recover.jsx'
+import Reset from '@/pages/Reset.jsx'
 /*End::Routes*/
 
 /*Routes Protection*/
@@ -41,7 +43,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Login />} />
-
+        <Route path="/forgot-password" element={<Recover />} />
+        <Route path="/reset-password" element={<Reset />} />
         /**404 */
         <Route path="*" element={<Navigate to="/" />} />
 
