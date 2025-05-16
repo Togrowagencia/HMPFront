@@ -8,6 +8,7 @@ import useAuth from '@/lib/hooks/useAuth';
 import Login from '@/pages/login.jsx'
 import Recover from '@/pages/Recover.jsx'
 import Reset from '@/pages/Reset.jsx'
+import Register from '@/pages/Register.jsx'
 /*End::Routes*/
 
 /*Routes Protection*/
@@ -42,11 +43,16 @@ function App() {
     <>
       <Routes>
 
-        <Route path="/" element={<Login />} />
-        <Route path="/forgot-password" element={<Recover />} />
-        <Route path="/reset-password" element={<Reset />} />
-        /**404 */
-        <Route path="*" element={<Navigate to="/" />} />
+        /*PUBLIC ROUTES*/
+          <Route path="/" element={<Login />} />
+          <Route path="/forgot-password" element={<Recover />} />
+          <Route path="/reset-password" element={<Reset />} />
+          <Route path="/register" element={<Register />} />
+        /*END::PUBLIC ROUTES*/
+
+        /*404*/
+          <Route path="*" element={<Navigate to="/" />} />
+        /*END::404 */
 
       </Routes>
     </>

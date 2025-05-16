@@ -9,7 +9,7 @@ const googleButton = () => {
   return (
     <button type='button' className='bg-gris-claro h-[40px] rounded-[50px] flex gap-2 items-center px-4' onClick={() => login()}>
       <img src="/svg/login/google.svg" className="w-[20px]" />
-      <p className='inter-16 negro-claro'>Ingresa Con Google</p>
+      <p className='inter-16 negro-claro'>Ingresa con Google</p>
     </button>
   )
 }
