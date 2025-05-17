@@ -14,6 +14,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ant-typography,
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-picker,
+.ant-table {
+    font-family: Inter !important; 
+}
+
 body {
   margin: 0px !important;
   background: #fff !important;;
