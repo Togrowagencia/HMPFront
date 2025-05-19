@@ -1,7 +1,13 @@
 import React from 'react'
 import HeaderDashboard from '@/components/headers/HeaderDashboard'
 import Banner from '@/components/banner'
+import VerticalBarChart from '@/components/charts/verticalBar';
+import PanelFilesReports from '@/components/dashboard/panelFilesReports';
 const Dashboard = () => {
+    const labels = ['Oficina 1', 'Oficina 2', 'Oficina 3', 'Oficina 4'];
+    const dataActual = [50, 75, 100, 125]; // Datos del periodo actual
+    const dataAnterior = [40, 70, 90, 110];
+
     return (
         <div className='h-full flex flex-col w-full gap-10 '>
             <HeaderDashboard />
@@ -13,11 +19,19 @@ const Dashboard = () => {
                     <Banner title={'Bienvenido a Brokers Max'} description={'Panel CEO'} backgroundImage="/images/background-azul.png" image={'/images/logo-dashboard.png'}/>
 
                     <div className='flex gap-4 h-[calc(100%_-_134px)]'>
-                        <div className='bg-white rounded-lg shadow-md p-4 w-[60%]'></div>
+                        <div className='bg-white rounded-lg shadow-md p-4 w-[60%] relative flex justify-center items-center'>
+                            <p className='absolute inter-18 azul-alternativa top-4 left-4'>Recaudado por oficina</p>
+                            <VerticalBarChart
+                                labels={labels}
+                                dataActual={dataActual}
+                                dataAnterior={dataAnterior}
+                            />
+                        </div>
 
                         <div className='flex flex-col w-[40%] gap-4'>
-                            <div className='bg-white rounded-lg shadow-md p-4 w-full h-[50%]'></div>
-                            <div className='bg-white rounded-lg shadow-md p-4 w-full h-[50%]'></div>
+                            <PanelFilesReports title={'Reportes en línea'} icon={'/svg/dashboard/reports.svg'} description={'Reportes generados'} value={'400'} percentaje={20} link={'/reports'}/>
+                            
+                            <PanelFilesReports title={'Archivos'} icon={'/svg/dashboard/files.svg'} description={'Documentos cargados'} value={'200'} percentaje={-20} link={'/folders'}/>
                         </div>
                     </div>
 
