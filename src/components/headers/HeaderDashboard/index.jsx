@@ -6,7 +6,7 @@ import SelectHeaders from '@/components/Inputs/SelectHeaders'
 import Notifications from '@/components/notifications'
 import NewOffice from '@/components/modals/newOffice'
 import NewUser from '@/components/modals/newUser'
-const HeaderSearchDate = () => {
+const HeaderDashboard = () => {
   return (
     <div className='flex items-center justify-between'>
         <div className='flex items-center justify-start gap-2'>
@@ -32,4 +32,4 @@ const HeaderSearchDate = () => {
   )
 }
 
-export default HeaderSearchDate
+export default HeaderDashboard
