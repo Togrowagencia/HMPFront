@@ -1,0 +1,19 @@
+.ant-drawer-header {
+  display: none !important;
+}
+.ant-select-selector {
+  border: 0px !important;
+  box-shadow: 0px 0px 0px 0px !important;
+  padding: 0px !important;
+}
+
+.ant-drawer-content-wrapper {
+  width: 555px !important;
+  height: 892px !important;
+  margin: 1.6%;
+  border-radius: 10px !important;
+}
+
+.ant-drawer-content {
+  border-radius: 10px !important;
+}

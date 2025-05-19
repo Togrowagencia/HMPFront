@@ -1,9 +1,9 @@
 import React from 'react'
-import HeaderSearchDate from '@/components/headers/HeaderSearchDate'
+import HeaderDashboard from '@/components/headers/HeaderDashboard'
 const Dashboard = () => {
     return (
         <div className='h-full flex flex-col w-full'>
-            <HeaderSearchDate />
+            <HeaderDashboard />
         </div>
     )
 }

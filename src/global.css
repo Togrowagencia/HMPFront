@@ -243,6 +243,14 @@ h4, .h4 {
   font-weight: 600;
   line-height: 20px;
 }
+
+.inter-32 {
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
 /*End::Global*/
 
 /*Animaciones*/
