@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import NewObjetive from '@/components/modals/newObjetive'
 const PanelObjetivo = ({ value = 200, max = 1000, size = 200, strokeWidth = 10, color = '#2CD3B7', bgColor = '#183A74' }) => {
     const percentage = Math.min((value / max) * 100, 100);
     const radius = 50;
@@ -7,9 +7,9 @@ const PanelObjetivo = ({ value = 200, max = 1000, size = 200, strokeWidth = 10, 
     const dashOffset = dashArray * (1 - percentage / 100);
   return (
     <div className='bg-white rounded-lg shadow-md p-4 w-[20%] relative flex flex-col gap-6 justify-center items-center'>
-        <Link to={'/objetivo'} className='absolute top-4 right-4'>
-            <img src="/svg/dashboard/goVerde.svg" className="" />
-        </Link>
+
+        <NewObjetive/>
+
         <div className='relative flex flex-col gap-6 justify-center items-center'>
         <svg width={size} height={size} viewBox="0 0 120 120">
             {/* Fondo */}
