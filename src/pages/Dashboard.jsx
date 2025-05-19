@@ -20,7 +20,7 @@ const Dashboard = () => {
             <div className="flex gap-4">
 
                 <div className="w-[65%] h-[428px] flex flex-col gap-4">
-                    <Banner title={'Bienvenido a Brokers Max'} description={'Panel CEO'} backgroundImage="/images/background-azul.png" image={'/images/logo-dashboard.png'}/>
+                    <Banner title={'Bienvenido a Brokers Max'} description={'Panel CEO'} backgroundImage="/images/background-azul.png" image={'/images/logo-dashboard.png'} bottom={'-14px'} right={'51px'}/>
 
                     <div className='flex gap-4 h-[calc(100%_-_134px)]'>
                         <div className='bg-white rounded-lg shadow-md p-4 w-[60%] relative flex justify-center items-center'>
