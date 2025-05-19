@@ -68,6 +68,10 @@ input {
   color: var(--Textos, #717171);
 }
 
+.gris-oscuro{
+  color: #3C3C3B;
+}
+
 .bg-gris {
   background-color: var(--Textos, #717171);
 }
@@ -228,6 +232,22 @@ h4, .h4 {
   line-height: 11px;
 }
 
+.inter-13 {
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.inter-16{
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
 .inter-18{
   font-family: Inter;
   font-size: 18px;
@@ -303,3 +323,31 @@ h4, .h4 {
   color: #cc3131;
   /* rojo para condiciones inválidas */
 } 
+
+/*Modals*/
+
+.ant-modal .ant-modal-content{
+  border-radius: 10px !important;
+}
+
+.ant-modal-close{
+  display: none !important;
+}
+
+.ant-modal .ant-modal-header {
+  display: none !important;
+}
+
+.ant-modal .ant-modal-footer{
+  display: none !important;
+}
+
+.ant-modal-content:has(.office){
+  width: 686px !important;
+  height: 319px !important;
+}
+
+.ant-modal-content:has(.users){
+  width: 686px;
+  height: 650px;
+}
