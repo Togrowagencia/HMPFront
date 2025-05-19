@@ -232,6 +232,14 @@ h4, .h4 {
   line-height: 11px;
 }
 
+.inter-11{
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 11px;
+}
+
 .inter-13 {
   font-family: Inter;
   font-size: 13px;

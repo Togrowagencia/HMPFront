@@ -3,6 +3,7 @@ import HeaderDashboard from '@/components/headers/HeaderDashboard'
 import Banner from '@/components/banner'
 import VerticalBarChart from '@/components/charts/verticalBar';
 import PanelFilesReports from '@/components/dashboard/panelFilesReports';
+import PanelStatistics from '@/components/dashboard/panelStatistics';
 const Dashboard = () => {
     const labels = ['Oficina 1', 'Oficina 2', 'Oficina 3', 'Oficina 4'];
     const dataActual = [50, 75, 100, 125]; // Datos del periodo actual
@@ -30,7 +31,7 @@ const Dashboard = () => {
 
                         <div className='flex flex-col w-[40%] gap-4'>
                             <PanelFilesReports title={'Reportes en línea'} icon={'/svg/dashboard/reports.svg'} description={'Reportes generados'} value={'400'} percentaje={20} link={'/reports'}/>
-                            
+
                             <PanelFilesReports title={'Archivos'} icon={'/svg/dashboard/files.svg'} description={'Documentos cargados'} value={'200'} percentaje={-20} link={'/folders'}/>
                         </div>
                     </div>
@@ -38,8 +39,8 @@ const Dashboard = () => {
                 </div>
 
                 <div className='flex w-[35%] h-[428px] gap-4'>
-                    <div className='bg-white rounded-lg shadow-md p-4 w-[50%]'></div>
-                    <div className='bg-white rounded-lg shadow-md p-4 w-[50%]'></div>
+                    <PanelStatistics color={'verde2'} title={'Estadisticas de Equipo'} icon={'/svg/dashboard/equipo.svg'} value={'600.000'} percentaje={20} clientes={false}/>
+                    <PanelStatistics color={'salmon'} title={'Clientes'} icon={'/svg/dashboard/clientes.svg'} value={'100'} percentaje={20} clientes={true}/>
                 </div>
                 
             </div>
