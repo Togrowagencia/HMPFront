@@ -112,6 +112,14 @@ input {
   background-color: var(--Azul-FB, #1E4483);
 }
 
+.azul {
+  color: #1E4483;
+}
+
+.bg-azul {
+  background-color: #1E4483;
+}
+
 .salmon {
   color: #EB6450;
 }

@@ -4,6 +4,9 @@ import Banner from '@/components/banner'
 import VerticalBarChart from '@/components/charts/verticalBar';
 import PanelFilesReports from '@/components/dashboard/panelFilesReports';
 import PanelStatistics from '@/components/dashboard/panelStatistics';
+import PanelProperties from '@/components/dashboard/panelProperties';
+import PanelMejorMes from '@/components/dashboard/panelMejorMes';
+import PanelObjetivo from '@/components/dashboard/panelObjetivo';
 const Dashboard = () => {
     const labels = ['Oficina 1', 'Oficina 2', 'Oficina 3', 'Oficina 4'];
     const dataActual = [50, 75, 100, 125]; // Datos del periodo actual
@@ -47,9 +50,9 @@ const Dashboard = () => {
             {/**END::Primera y segunda fila del dashboard */}
 
             <div className='flex gap-4 w-full h-full'>
-                <div className='bg-white rounded-lg shadow-md p-4 w-[50%]'></div>
-                <div className='bg-white rounded-lg shadow-md p-4 w-[30%]'></div>
-                <div className='bg-white rounded-lg shadow-md p-4 w-[20%]'></div>
+                <PanelProperties />
+                <PanelMejorMes />
+                <PanelObjetivo/>
             </div>
 
 
