@@ -375,3 +375,8 @@ h4, .h4 {
   width: 686px;
   height: 650px;
 }
+
+.ant-modal-content:has(.transaction){
+  width: 686px;
+  height: 511px;
+}

@@ -7,6 +7,7 @@ const InputTextLabel = ({type,name,value,handleChange,label, width}) => {
         <input
             type={type}
             className="bg-transparent inter-16 w-full border h-[40px] rounded-[50px] px-4 border-[#0556BF] negro"
+            value={value}
             name={name}
             onChange={handleChange}
         />

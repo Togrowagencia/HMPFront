@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from '@/components/headers/Header'
 import Banner from '@/components/banner'
-
+import NewTransaction from '@/components/modals/newTransaction'
+import Cards from '@/components/transactions/Cards'
+import Table from '@/components/transactions/Table'
 
 const Transacciones = () => {
   return (
@@ -13,14 +15,16 @@ const Transacciones = () => {
                   <Banner title={'TRANSACCIONES'} description={''} backgroundImage="/images/background-azul.png" image={'/images/transacciones-banner.png'} bottom={'-50px'} right={'51px'}/>
                 </div>
 
-                <div className='w-[35%] flex gap-4 bg-[#752ED3] rounded-[10px] relative'>
-                  <div className='absolute bottom-0 right-0 bg-blanco h-[45px] w-[55px] rounded-tl-lg'>
-                    <button>
-
-                    </button>
-                  </div>
-                </div>
+                <NewTransaction />
             </div>
+
+            <div className="flex gap-4">
+                <Cards title={'Total Transacciones'} value={'150'} description={'Transacciones Nuevas'}/>
+                <Cards title={'Propiedades Asignadas'} value={'25'} description={'Propiedades'}/>
+                <Cards title={'Transacciones cerradas'} value={'25'} description={'Transacciones cerradas'}/>
+            </div>
+
+            <Table/>
 
         </div>
   )
