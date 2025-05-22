@@ -52,6 +52,9 @@ const VerticalBarChart = ({ dataActual, dataAnterior, labels }) => {
       title: {
         display: false,
       },
+      datalabels: {
+        display: false,
+      },
     },
     scales: {
       x: {
