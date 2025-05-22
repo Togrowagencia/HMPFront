@@ -13,6 +13,7 @@ import Dashboard from '@/pages/Dashboard.jsx'
 import Transactions from '@/pages/Transactions.jsx'
 import Users from '@/pages/Users.jsx'
 import Folders from '@/pages/Folders.jsx'
+import Tasks from '@/pages/Tasks.jsx'
 /*End::Routes*/
 
 /*Layouts*/
@@ -108,7 +109,7 @@ function App() {
             element={
               //<ProtectedRout e>
                 <DashboardLayout>
-                  <Dashboard />
+                  <Tasks />
                 </DashboardLayout>
               //</ProtectedRout>
             }

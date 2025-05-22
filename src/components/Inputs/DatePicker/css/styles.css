@@ -1,0 +1,8 @@
+.ant-picker-range .ant-picker-active-bar {
+    background-color: #0556BF;
+}
+.ant-picker-outlined:focus, :where(.css-dev-only-do-not-override-19lec04).ant-picker-outlined:focus-within{
+    background-color: transparent;
+    border: 0px;
+    box-shadow: 0 0 0 0px #0556BF;
+}
