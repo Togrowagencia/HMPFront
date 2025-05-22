@@ -12,6 +12,7 @@ import Register from '@/pages/Register.jsx'
 import Dashboard from '@/pages/Dashboard.jsx'
 import Transactions from '@/pages/Transactions.jsx'
 import Users from '@/pages/Users.jsx'
+import Folders from '@/pages/Folders.jsx'
 /*End::Routes*/
 
 /*Layouts*/
@@ -96,7 +97,7 @@ function App() {
             element={
               //<ProtectedRout e>
                 <DashboardLayout>
-                  <Dashboard />
+                  <Folders />
                 </DashboardLayout>
               //</ProtectedRout>
             }

@@ -380,3 +380,38 @@ h4, .h4 {
   width: 686px;
   height: 511px;
 }
+
+.ant-modal-content:has(.folders){
+  width: 686px;
+  height: 925px;
+  max-height: 925px;
+}
+
+/*Scroll*/
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+} 
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7C7C7C;
+  border-radius: 20px;
+  border: 0px solid #7C7C7C;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+/*End:Scroll*/

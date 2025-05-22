@@ -1,0 +1,14 @@
+.ant-tabs-tab-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    
+    color: var(--Textos, #717171);
+
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+}
