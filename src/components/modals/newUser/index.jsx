@@ -3,15 +3,27 @@ import { Modal } from 'antd';
 import InputText from '@/components/Inputs/InputTextLabel'
 import InputPhoto from '@/components/Inputs/InputPhoto'
 import Switch from '@/components/Inputs/switch'
-const modalUsers = () => {
+const modalUsers = ({isButton}) => {
     const [modal2Open, setModal2Open] = useState(false);
     const [name, setName] = useState("");
     const [cargo, setCargo] = useState("");
   return (
     <>
-        <button className='flex items-center bg-azul-alternativa p-2 rounded-[5px]' onClick={() => setModal2Open(true)}>
-            <p className='inter-16 blanco'>Crear Usuarios</p>
-        </button>
+        {
+            isButton ?
+            <button className='flex items-center bg-azul-alternativa p-2 rounded-[5px]' onClick={() => setModal2Open(true)}>
+                <p className='inter-16 blanco'>Crear Usuarios</p>
+            </button>
+            : 
+            <div className='w-[35%] cursor-pointer flex items-end pl-[32px] pb-[22px] gap-4 bg-[#1E4483] rounded-[10px] relative' onClick={() => setModal2Open(true)}>
+                <p className='blanco inter-32'>Crear nuevo usuario</p>
+                <div className='absolute bottom-0 right-0 bg-[#F9F9F9] h-[50px] w-[60px] rounded-tl-lg flex items-center justify-center'>
+                    <button className='bg-[#0556BF] inter-32 blanco rounded-[10px] w-[38px] h-[38px] text-center flex items-center justify-center'>
+                    +
+                    </button> 
+                </div>
+            </div>
+        }
 
         <Modal title="" centered open={modal2Open} onOk={() => setModal2Open(false)} onCancel={() => setModal2Open(false)}>
                 <div className={`w-full h-full px-4 py-2 users flex flex-col gap-6`}>

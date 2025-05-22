@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderDashboard from '@/components/headers/HeaderDashboard'
 import Banner from '@/components/banner'
-import VerticalBarChart from '@/components/charts/verticalBar';
+import VerticalBarChart from '@/components/charts/VerticalBar';
 import PanelFilesReports from '@/components/dashboard/panelFilesReports';
 import PanelStatistics from '@/components/dashboard/panelStatistics';
 import PanelProperties from '@/components/dashboard/panelProperties';
@@ -20,7 +20,7 @@ const Dashboard = () => {
             <div className="flex gap-4">
 
                 <div className="w-[65%] h-[428px] flex flex-col gap-4">
-                    <Banner title={'Bienvenido a Brokers Max'} description={'Panel CEO'} backgroundImage="/images/background-azul.png" image={'/images/logo-dashboard.png'} bottom={'-14px'} right={'51px'}/>
+                    <Banner title={'Bienvenido a Brokers Max'} description={'Panel CEO'} backgroundImage="/images/background-azul.png" image={''} bottom={'-14px'} right={'51px'}/>
 
                     <div className='flex gap-4 h-[calc(100%_-_134px)]'>
                         <div className='bg-white rounded-lg shadow-md p-4 w-[60%] relative flex justify-center items-center'>

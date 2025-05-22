@@ -12,7 +12,7 @@ const Transacciones = () => {
 
             <div className="flex gap-4">
                 <div className='w-[65%] flex gap-4'>
-                  <Banner title={'TRANSACCIONES'} description={''} backgroundImage="/images/background-azul.png" image={'/images/transacciones-banner.png'} bottom={'-50px'} right={'51px'}/>
+                  <Banner title={'TRANSACCIONES'} description={''} backgroundImage="/images/background-azul.png" image={''} bottom={'-50px'} right={'51px'}/>
                 </div>
 
                 <NewTransaction />

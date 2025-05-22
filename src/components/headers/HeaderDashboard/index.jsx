@@ -16,7 +16,7 @@ const HeaderDashboard = () => {
         </div>
 
         <div className='flex items-center justify-end gap-2'>
-            <NewUser />
+            <NewUser isButton={true}/>
             <NewOffice />
         </div>
 
