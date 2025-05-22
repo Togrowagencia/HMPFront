@@ -9,7 +9,7 @@ const modalTasks = () => {
   return (
     <>
         <div className='w-[35%] cursor-pointer flex items-end pl-[32px] pb-[22px] gap-4 bg-blanco border border-[#3ED7A7] rounded-[10px] relative' onClick={() => setModal2Open(true)}>
-          <p className='azul inter-32'>Crear transaccion nueva</p>
+          <p className='azul inter-32'>Crear tarea nueva</p>
           <div className='absolute bottom-[-1px] right-[-1px] border-l border-t border-[#3ED7A7] bg-[#F9F9F9] h-[50px] w-[60px] rounded-tl-lg flex items-center justify-center'>
             <button className='bg-[#3ED7A7] inter-32 blanco rounded-[10px] w-[38px] h-[38px] text-center flex items-center justify-center'>
               +
