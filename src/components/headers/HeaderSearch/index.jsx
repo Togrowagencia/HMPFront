@@ -1,23 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import SearchInput from '@/components/Inputs/SearchInput'
-import DateInput from '@/components/Inputs/DateRangePicker'
-import SelectHeaders from '@/components/Inputs/SelectHeaders'
 import Notifications from '@/components/notifications'
-import NewOffice from '@/components/modals/newOffice'
-import NewUser from '@/components/modals/newUser'
-const HeaderDashboard = () => {
+import { Link } from 'react-router-dom'
+const HeaderSearch = () => {
   return (
     <div className='flex items-center justify-between'>
         <div className='flex items-center justify-start gap-2'>
             <SearchInput placeholder="Buscar..." width="347px" route="/svg/inputs/search.svg"/>
-            <DateInput width="347px" route="/svg/inputs/calendar.svg"/>
-            <SelectHeaders placeholder="Sede" width="347px" icon="/svg/inputs/calendar.svg"/>
-        </div>
-
-        <div className='flex items-center justify-end gap-2'>
-            <NewUser isButton={true}/>
-            <NewOffice isButton={true}/>
+            {/*<button className='flex items-center justify-center gap-2 bg-[#0556BF] rounded-[8px] px-4 py-2 inter-16 blanco'>
+                Aplicar Filtros
+            </button>*/}
         </div>
 
         <div className='flex items-center justify-end gap-4'>
@@ -32,4 +24,4 @@ const HeaderDashboard = () => {
   )
 }
 
-export default HeaderDashboard
+export default HeaderSearch

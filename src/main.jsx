@@ -12,7 +12,8 @@ import {baseUrl} from './settings/baseUrl.js'
 axios.defaults.baseURL = `${baseUrl}/api/v2/`;
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
+    {/* <StrictMode> */}
     <BrowserRouter>
       <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
         <Provider store={store}>
@@ -20,5 +21,6 @@ createRoot(document.getElementById('root')).render(
         </Provider>
       </GoogleOAuthProvider>
     </BrowserRouter>
-  </StrictMode>,
+    {/* </StrictMode> */}
+  </>
 )
