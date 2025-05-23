@@ -1,0 +1,38 @@
+.rbc-event, .rbc-day-slot .rbc-background-event {
+    background-color: #0556BF !important;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+}
+
+.rbc-show-more {
+    font-family: Inter;
+    font-size: 13px !important;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 13px;
+    color: #0556BF !important;
+}
+
+.rbc-header {
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: #0556BF !important;
+}
+
+.rbc-button-link {
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.rbc-month-view {
+    border-radius: 10px;
+}

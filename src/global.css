@@ -387,6 +387,11 @@ h4, .h4 {
   max-height: 925px;
 }
 
+.ant-modal-content:has(.task){
+  width: 686px;
+  height: 429px;
+}
+
 /*Scroll*/
 ::-webkit-scrollbar {
   -webkit-appearance: none;
