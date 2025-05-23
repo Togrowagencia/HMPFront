@@ -5,7 +5,7 @@ import SelectLabel from '@/components/Inputs/SelectLabel'
 import DatePicker from '@/components/Inputs/DatePicker'
 import TextAreaLabel from '@/components/Inputs/TextAreaLabel'
 const modalTasks = () => {
-    const [modal2Open, setModal2Open] = useState(true);
+    const [modal2Open, setModal2Open] = useState(false);
   return (
     <>
         <div className='w-[35%] cursor-pointer flex items-end pl-[32px] pb-[22px] gap-4 bg-blanco border border-[#3ED7A7] rounded-[10px] relative' onClick={() => setModal2Open(true)}>
