@@ -3,6 +3,7 @@ import { Modal } from 'antd';
 import InputText from '@/components/Inputs/InputTextLabel'
 import InputPhoto from '@/components/Inputs/InputPhoto'
 import Switch from '@/components/Inputs/switch'
+
 const modalUsers = ({isButton}) => {
     const [modal2Open, setModal2Open] = useState(false);
     const [name, setName] = useState("");

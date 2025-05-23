@@ -392,6 +392,17 @@ h4, .h4 {
   height: 429px;
 }
 
+.ant-modal-content:has(.reports){
+  width: 381px;
+  height: 390px;
+}
+
+.ant-modal-root .ant-modal-centered .ant-modal:has(.reportPDF),
+.ant-modal-content:has(.reportPDF){
+  width: 1280px !important;
+  height: 594px;
+}
+
 /*Scroll*/
 ::-webkit-scrollbar {
   -webkit-appearance: none;

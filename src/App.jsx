@@ -14,6 +14,7 @@ import Transactions from '@/pages/Transactions.jsx'
 import Users from '@/pages/Users.jsx'
 import Folders from '@/pages/Folders.jsx'
 import Tasks from '@/pages/Tasks.jsx'
+import Reports from '@/pages/Reports.jsx'
 /*End::Routes*/
 
 /*Layouts*/
@@ -120,7 +121,7 @@ function App() {
             element={
               //<ProtectedRout e>
                 <DashboardLayout>
-                  <Dashboard />
+                  <Reports />
                 </DashboardLayout>
               //</ProtectedRout>
             }
